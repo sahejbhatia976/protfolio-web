@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sahej Bhatia | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel = "stylesheet" href="style.css">
+  </head>
+
+<body>
+  <header>
+    <h1>Sahej Bhatia</h1>
+    <p>Aspiring Web Developer | Frontend & Backend Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+  <div class="about-container">
+    <div class="floating-text" id="floatingText">About Me</div>
+    <p class="about-description">
+      Passionate and eager web development enthusiast skilled in crafting modern, responsive websites.
+      With a strong desire to learn and contribute to real-world projects, I specialize in frontend and backend integration using HTML, CSS, JavaScript, and Php. I thrive in collaborative environments and love turning ideas into functional user-centric interfaces.
+    </p>
+  </div>
+</section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3><a href="https://sahejbhatia976.github.io/Portfolio-Webs/" target="_blank" style="text-decoration: none; color: inherit;">Easy Voyage - Car Rental Website</a></h3>
+      <p>A modern, responsive  website to showcase my skills Created for BCA major project 2025.</p>
+      
+    </div>
+    <div class="project">
+      <h3><a href="https://sahejbhatia976.github.io/onekorse/" target="_blank" style="text-decoration: none; color: inherit;">ONEKORSE-course website (Concept)</a></h3>
+      <p>A cloned responsive course website built to practice front-end development skills.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">PHP</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Python</div>
+      <div class="skill">Photoshop</div>
+      <div class="skill">Canva</div>
+      <div class="skill">Figma</div>
+    </div>
+  </section>
+
+  <section id="contact">
+  <div class="contact-container">
+    <h2>Let's Connect</h2>
+    <p>If you're interested in working together, feel free to reach out!</p>
+    <div class="contact-card">
+      <a href="mailto:sahejbhatia748@gmail.com" class="contact-link">
+        📧 sahejbhatia748@gmail.com
+      </a>
+      <a href="tel:09311087134" class="contact-link">
+        📞 +91 93110 87134
+      </a>
+      <a href="https://www.linkedin.com/in/sahej-bhatia-91a475291/" target="_blank" class="contact-link">
+        🔗 LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2025 Sahej Bhatia. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal animation for sections
+    const sections = document.querySelectorAll('section');
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+ 
+ <script>
+  // Stop animation after scrolling away from About section
+  window.addEventListener('scroll', () => {
+    const aboutSection = document.getElementById('about');
+    const floatingText = document.getElementById('floatingText');
+    const rect = aboutSection.getBoundingClientRect();
+
+    if (rect.top < -100 || rect.bottom < 0) {
+      floatingText.style.animation = 'none';
+    } else {
+      floatingText.style.animation = 'floatShape 10s infinite linear';
+    }
+  });
+</script>
+
+<script>
+  // Animate contact section into view
+  window.addEventListener('scroll', () => {
+    const contact = document.querySelector('#contact .contact-container');
+    const rect = contact.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.8) {
+      contact.classList.add('visible');
+    }
+  });
+</script>
+
+</body>
+
+</html>
